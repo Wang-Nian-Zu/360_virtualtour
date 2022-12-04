@@ -13,11 +13,13 @@ function Live2DModel() {
             if(pathname === "/virtualTour"){
                 live2Dcontainer = document.getElementById('live2d-container');
                 live2Dcontainer.style.pointerEvents = "none";
+                live2D.style.pointerEvents = "none";
+            }else{
+                live2D.style.pointerEvents = "auto";
             }
         }else{
             live2D = document.getElementById('live2d');
-            live2D.style.display = "none";
-            live2D.style.pointerEvents = "auto";
+            live2D.style.display = "none";            
         }
     }, [pathname]);
     return (
