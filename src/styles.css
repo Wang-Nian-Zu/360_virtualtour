@@ -1,0 +1,101 @@
+.App {
+  font-family: sans-serif;
+  height: 400px;
+}
+
+.divIcon {
+  width: auto;
+  text-align: center;
+  pointer-events: none;/*加這行可以穿透*/
+  height: 600px;
+}
+
+.bottomIcon {
+  width: auto;
+  text-align: center;
+  pointer-events: none;/*加這行可以穿透*/
+}
+
+.webIcon {
+  text-align: center;
+}
+
+.shape {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.5s;
+  width: 440px;
+  height: 340px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.shape2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.5s;
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+#intro {
+  font-size: 14px;
+}
+
+.mainUI{
+  width: 350px;
+  height: 200px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.5s;
+  font-size: 35px; 
+}
+
+div.custom-tooltip span {
+  visibility: hidden;
+  position: absolute;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  max-width: 200px;
+  padding: 5px 10px;
+  margin-left: -220px;
+  cursor: default;
+}
+div.custom-tooltip:hover span{
+  /*hover 是在控制當滑鼠移至某元件時，某元件該如何反應*/
+  visibility: visible;
+}
+div.custom-tooltip:hover span:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+  bottom: -20px;
+  left: -10px;
+  margin: 0 50%;
+}
+.btn_action.pp {
+  /* margin-top: 10px; */
+  font-size: 1.8rem;
+}
+#music-toggle {
+  position: absolute;
+  /* top: 35px; */
+  /* left: 3px; */
+  right: 4px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}

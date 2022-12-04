@@ -1,0 +1,108 @@
+@media (max-width: 319.99px) {
+
+}
+
+@media (min-width: 320px) and (max-width: 719.99px) {
+
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1024px) and (max-width: 1199.99px) {
+  .windowContain {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .windowContain {
+    width: 50%;
+  }
+}
+
+
+
+/* 沒點的 Nav */
+#tab-tab-login.nav-link {
+  color: #424242;
+  background-color: #ffffff80;
+  border: solid 1pt #424242;
+}
+
+#tab-tab-login.nav-link:hover {
+  color: #393838;
+  background-color: #f3f3f380;
+}
+
+/* 點了的 Nav */
+#tab-tab-login.nav-link.active{
+  color:#ffffff;
+  background-color: #d78559;
+}
+
+#tab-tab-register.nav-link {
+  color: #424242;
+  background-color: #ffffff80;
+  border: solid 1pt #424242;
+}
+
+#tab-tab-register.nav-link:hover {
+  color: #393838;
+  background-color: #f3f3f380;
+}
+
+/* 點了的 Nav */
+#tab-tab-register.nav-link.active{
+  color:#ffffff;
+  background-color: #d78559;
+}
+
+.mb-3.nav.nav-tabs.nav-justified{
+  border-bottom: none;
+}
+
+.d-flex.justify-content-center{
+  color: #424242;
+}
+
+form {
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.form-label {
+  flex-grow: 1;
+  width: auto;
+}
+
+input {
+  flex-grow: 1;
+  width: auto;
+}
+
+input:focus{
+  outline: none ;
+  border: 2pt solid #bdac92;
+}
+
+.check_btn {
+  width: 90pt;
+  height: 30pt;
+  color: #424242;
+  background-color: #ffffff80;
+  border: 1px solid #424242;
+  border-radius: 4px;
+}
+
+.check_btn:hover{
+  background-color: #a8967b;
+  color: #ffffff;
+  border: 1pt solid #424242;
+}

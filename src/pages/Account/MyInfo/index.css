@@ -1,0 +1,34 @@
+.editInfo {
+    width: 90pt;
+    height: 30pt;
+    background-color: #a8967b;
+    color: #ffffff;
+    border: 1px solid #a8967b;
+    border-radius: 4px;
+}
+
+.editInfo:hover {
+    background-color: #ffffff00;
+    color: #424242;
+    border: 1pt solid #a8967b;
+}
+
+.storage {
+    width: 90pt;
+    height: 30pt;
+    background-color: #99a074;
+    color: #ffffff;
+    border: 1px solid #99a074;
+    border-radius: 4px;
+}
+.storage:hover {
+    background-color: #899068;
+    border: 1pt solid #899068;
+    color: #ffffff;
+}
+.storage:focus,.storage:active {
+    background-color: #899068;
+    border: 1pt solid #899068;
+    outline: none !important;
+    box-shadow: none !important;
+}

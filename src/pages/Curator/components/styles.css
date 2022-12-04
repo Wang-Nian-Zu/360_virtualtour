@@ -1,0 +1,54 @@
+.myphoto {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    clip-path: circle(50%);
+}
+
+.card-img-top {
+    height: 250pt;
+}
+
+.curatorCard.card {
+    height: 425pt;
+    background-color: #ffffff80;
+  }
+  
+.curatorExCard.card {
+    height: 350pt;
+    background-color: #ffffff80;
+  }
+
+.btn.btn-success {
+    border: solid 1px #e38970;
+    border-radius: 4px;
+    background-color: #e38970;
+    color: #fffbee;
+}
+
+.btn.btn-success:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn.btn-success:hover {
+    background-color: #FFFAD4;
+    color: #e38970;
+}
+
+.btn.btn-outline-success {
+    border: solid 1px #e38970;
+    border-radius: 4px;
+    background-color: #FFFAD4;
+    color: #e38970;
+}
+
+.btn.btn-outline-success:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn.btn-outline-success:hover {
+    background-color: #e38970;
+    color: #fffbee;
+}

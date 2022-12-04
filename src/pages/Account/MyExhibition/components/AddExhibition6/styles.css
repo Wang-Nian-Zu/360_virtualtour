@@ -1,0 +1,126 @@
+  #panorama6Div {
+    font-family: sans-serif;
+    height: 500px;
+  }
+
+  .divIcon {
+    width: auto;
+    text-align: center;
+    pointer-events: none;/*加這行可以穿透*/
+  }
+
+  .shape {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+
+  div.custom-tooltip span {
+    visibility: hidden;
+    position: absolute;
+    border-radius: 3px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    max-width: 200px;
+    padding: 5px 10px;
+    margin-left: -220px;
+    cursor: default;
+  }
+
+  div.custom-tooltip:hover span {
+    /*hover 是在控制當滑鼠移至某元件時，某元件該如何反應*/
+    visibility: visible;
+  }
+
+  div.custom-tooltip:hover span:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    bottom: -20px;
+    left: -10px;
+    margin: 0 50%;
+  }
+
+  div.pnlm-panorama-info {
+    left: 0;
+  }
+
+  /* 以下是小地圖的css */
+  #controls {
+    position: absolute;
+    z-index: 2;
+  }
+
+  #slidingMenu {
+    padding: 10px 1px;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    width: 280px;
+  }
+
+  .slidingMenu {
+    background: rgba(200, 200, 200, 0.7);
+  }
+
+  .slidingMenu:hover {
+    background: rgba(200, 200, 200, 1);
+  }
+
+  .vmenu {
+    padding: 0px;
+    margin: 0px;
+    float: left;
+  }
+
+  #rightPanel {
+    height: 200px;
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  /*  以上是小地圖的css */
+  /*  以下是導覽語音的css */
+  #addPMusicControls {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+  }
+
+  #addPMusicSlidingMenu {
+    padding: 1px;
+    display: inline-block;
+    width: 600px;
+  }
+
+  .addPMusicSlidingMenu {
+    background: rgba(235, 226, 191, 0.8);
+  }
+
+  .addPMusicSlidingMenu:hover {
+    background: rgb(235, 226, 191, 0.95);
+  }
+
+  .addPMusicVmenu {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  #addPMusicUpPanel {
+    display: inline;
+    cursor: pointer;
+  }
+  /*  以上是導覽語音的css */

@@ -1,0 +1,21 @@
+.navbar_menu {
+    background-color:  #99a074;
+}
+.myNavbar {
+    width: 100%;
+    border: solid 1pt #99a074;
+    border-radius: 0rem;
+    background-color: #99a074;
+    color: #ffffff;
+}
+
+.myNavbar:hover {
+    background-color: #fffbee80;
+    border: solid 1pt #fffbee00;
+}
+
+.myNavbar:focus {
+    border: solid 1pt rgba(66, 66, 66, 0);
+    color: #fffbee;
+
+}

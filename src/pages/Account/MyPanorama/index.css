@@ -1,0 +1,129 @@
+#addPanorama {
+    background-color: #d78559;
+    border: none;
+}
+#addPanorama:hover {
+    background-color: #cc7e54;
+    box-shadow: none;
+}
+#addPanorama:focus,#addPanorama:active {
+    background-color: #d78559;
+    border: none;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+#otherPanorama {
+    background-color: #a8967b;
+    border: none;
+}
+
+#otherPanorama:focus,
+#otherPanorama:active {
+    background-color: #a8967b;
+    border: none;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.EditMyPanoramaButton {
+    background-color: #ffffff00;
+    color: #424242;
+    border: 1pt solid #a8967b;
+}
+
+.EditMyPanoramaButton:hover {
+    background-color: #a8967b;
+    border: 1pt solid #a8967b;
+}
+
+.EditMyPanoramaButton:focus,
+.EditMyPanoramaButton:active {
+    background-color: #ffffff00;
+    border: 1pt solid #a8967b;
+    color: #424242;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.remove_btn {
+    border: solid 1px #e38970;
+    border-radius: 4px;
+    background-color: #e38970;
+    color: #ffffff;
+    width: 90pt;
+    height: 30pt;
+}
+
+.remove_btn:hover {
+    background-color: #ffffff00;
+    border: 1px solid #e38970;
+    color: #e38970;
+}
+
+.update_btn {
+    border: solid 1px #99a074;
+    border-radius: 4px;
+    background-color: #99a074;
+    color: #ffffff;
+    width: 90pt;
+    height: 30pt;
+}
+
+.update_btn:hover {
+    background-color: #8d946c;
+    border: 1pt solid #8d946c;
+}
+
+.update_btn:focus,
+.update_btn:active {
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: #99a074;
+    border: 1px solid #99a074;
+    color: #ffffff;
+}
+
+.cancel_btn {
+    background-color: #ffffff00;
+    border: 1px solid #a8967b;
+    color: #a8967b;
+}
+
+.cancel_btn:hover {
+    border: solid 1px #a8967b;
+    border-radius: 4px;
+    background-color: #a8967b;
+    color: #ffffff;
+}
+
+.cancel_btn:focus,
+.cancel_btn:active {
+    background-color: #ffffff00;
+    border: 1px solid #a8967b;
+    color: #a8967b;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.delete_btn {
+    background-color: #ffffff;
+    border: 1px solid #e38970;
+    color: #e38970;
+}
+
+.delete_btn:hover {
+    border: solid 1px #e38970;
+    border-radius: 4px;
+    background-color: #e38970;
+    color: #ffffff;
+}
+
+.delete_btn:focus,
+.delete_btn:focus {
+    background-color: #ffffff00;
+    outline: none !important;
+    box-shadow: none !important;
+    color: #e38970;
+
+}

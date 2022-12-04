@@ -1,0 +1,26 @@
+.checkpano_btn {
+    background-color: #ffd47c;
+    border: #ffd47c;
+}
+.checkpano_btn:hover {
+    background-color: #ffd47c;
+    border: #ffd47c;
+}
+.checkpano_btn:focus,.checkpano_btn:active {
+    background-color: #ffd47c;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.okpano_btn {
+    background-color: #6c757d;
+    border: #6c757d;
+}
+.okpano_btn:hover {
+    background-color: #6c757d;
+    border: #6c757d;
+}
+.okpano_btn:focus,.checkpano_btn:active {
+    background-color: #6c757d;
+    outline: none !important;
+    box-shadow: none !important;
+}

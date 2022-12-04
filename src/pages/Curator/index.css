@@ -1,0 +1,109 @@
+@media (max-width: 319.99px) {
+    .myphoto {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        clip-path: circle(50%);
+    }
+}
+
+@media (min-width: 320px) and (max-width: 719.99px) {
+    .myphoto {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        clip-path: circle(50%);
+    }
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+    .myphoto {
+        width: 120px;
+        height: 120px;
+        overflow: hidden;
+        clip-path: circle(50%);
+    }
+    .curatorname {
+        font-size: larger;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1199.99px) {
+    .myphoto {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        clip-path: circle(50%);
+    }
+}
+
+@media (min-width: 1200px) {
+    .myphoto {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        clip-path: circle(50%);
+    }
+}
+
+.curatorCard {
+    height: 425pt;
+    background-color: #ffffffbc;
+}
+
+.curatorCard:hover {
+    transform: scale(1.03);
+}
+
+.card-img-top {
+    height: 250pt;
+}
+
+.exhitbit_close {
+    color: #e38970;
+}
+
+
+
+.btn.btn-success {
+    border: solid 1px #e38970;
+    border-radius: 4px;
+    background-color: #e38970;
+    color: #fffbee;
+}
+
+.btn.btn-success:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn.btn-success:hover {
+    background-color: #ffffff1c;
+    color: #e38970;
+}
+
+.btn.btn-outline-success {
+    border: solid 1px #e38970;
+    border-radius: 4px;
+    background-color: #ffffff1c;
+    color: #e38970;
+}
+
+.btn.btn-outline-success:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn.btn-outline-success:hover {
+    background-color: #e38970;
+    color: #fffbee;
+}
+
+.curatorExCard {
+    height: 350pt;
+    background-color: #ffffffbc;
+}
+
+.curatorExCard:hover {
+    transform: scale(1.03);
+}

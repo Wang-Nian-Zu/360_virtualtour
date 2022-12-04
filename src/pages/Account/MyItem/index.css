@@ -1,0 +1,45 @@
+#addItem {
+    background-color: #d78559;
+    border: none;
+}
+#addItem:hover {
+    background-color: #cc7e54;
+    box-shadow: none;
+}
+#addItem:focus,#addItem:active {
+    background-color: #d78559;
+    border: none;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.editItemButton {
+    background-color: #ffffff00;
+    color: #424242;
+    border: 1pt solid #a8967b;
+}
+
+.editItemButton:hover {
+    background-color: #a8967b;
+    border: 1pt solid #a8967b;
+}
+
+.editItemButton:focus,.editItemButton:active {
+    background-color: #ffffff00;
+    border: 1pt solid #a8967b;
+    color: #424242;
+    box-shadow: none;
+    outline: none !important;
+}
+
+#otherItem {
+    background-color: #a8967b;
+    border: none;
+}
+
+#otherItem:focus,
+#otherItem:active {
+    background-color: #a8967b;
+    border: none;
+    box-shadow: none;
+    outline: none !important;
+}

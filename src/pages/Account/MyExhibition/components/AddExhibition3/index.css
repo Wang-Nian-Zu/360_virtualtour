@@ -1,0 +1,26 @@
+.moveSpot-container {
+    background-color: #d78559;
+    border-radius: 0.5rem;
+}
+
+.move_btn {
+    background-color: #ffd47c;
+    border: #ffd47c;
+    color: #424242;
+}
+
+.move_btn:hover {
+    background-color: #f1c774;
+    border: #ffd47c;
+    color: #424242;
+
+}
+
+.move_btn:focus,
+.move_btn:active {
+    background-color: #ffd47c;
+    outline: none !important;
+    box-shadow: none !important;
+    color: #424242 !important;
+
+}

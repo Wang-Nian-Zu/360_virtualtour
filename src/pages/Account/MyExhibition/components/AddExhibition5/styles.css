@@ -1,0 +1,112 @@
+#panorama5Div {
+  font-family: sans-serif;
+  height: 500px;
+}
+
+.divIcon {
+  width: auto;
+  text-align: center;
+  pointer-events: none;
+  /*加這行可以穿透*/
+}
+
+.shape {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.5s;
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.title {
+  display: inline-block;
+  min-width: 50px;
+  max-height: 45px;
+  padding: 2px 9px;
+  font-weight: lighter;
+  font-size: 1.3rem;
+  line-height: 2.1rem;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.5s;
+  margin-top: 8px;
+  text-align: center;
+}
+
+div.custom-tooltip span {
+  visibility: hidden;
+  position: absolute;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  max-width: 200px;
+  padding: 5px 10px;
+  margin-left: -220px;
+  cursor: default;
+}
+
+div.custom-tooltip:hover span {
+  /*hover 是在控制當滑鼠移至某元件時，某元件該如何反應*/
+  visibility: visible;
+}
+
+div.custom-tooltip:hover span:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+  bottom: -20px;
+  left: -10px;
+  margin: 0 50%;
+}
+
+div.pnlm-panorama-info {
+  left: 0;
+}
+
+/*=============縮放圖片的元件==============*/
+#father {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  pointer-events: none;
+  /*可以穿透這格Div*/
+}
+
+#custombox {
+  border-style: solid;
+  border-color: red;
+  position: absolute;
+  pointer-events: auto;
+  /*不可以穿透這格Div*/
+}
+
+#hotspotImg {
+  width: 100%;
+  height: 100%;
+  cursor: move;
+  pointer-events: auto;
+  /*不可以穿透這格Div*/
+}
+
+#scale {
+  width: 10px;
+  height: 10px;
+  overflow: hidden;
+  cursor: se-resize;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(248, 9, 1);
+  pointer-events: auto;
+  /*不可以穿透這格Div*/
+}
+
+/*================================*/

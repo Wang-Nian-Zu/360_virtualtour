@@ -1,0 +1,126 @@
+.myExhibitionCard.card {
+    /* height: 425pt; */
+    background-color: #ffffffbc;
+    width: 100px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+.myExhibitionCard:hover {
+    transform: scale(1.03);
+}
+
+.slick-next:before,
+.slick-prev:before {
+    color: #424242;
+}
+
+.CreateMyExhibitionButton {
+    width: 85px;
+    height: 85px;
+    border-radius: 99em;
+    line-height: 20px
+}
+
+.content {
+    display: none;
+    font-size: medium;
+}
+
+.CreateMyExhibitionButton:hover .content {
+    display: block;
+    color: #ffffff;
+}
+
+.bg-bar {
+    background-color: #ffd47c !important;
+}
+
+.pre_btn {
+    color: #6c757d;
+    background-color: #ffffff00;
+    padding: 6px 12px;
+    border: solid 1px #6c757d;
+    border-radius: 0.5rem;
+}
+
+.pre_btn:hover {
+    color: #ffffff;
+    background-color: #6c757d;
+    padding: 6px 12px;
+    border: solid 1px #6c757d;
+    border-radius: 0.5rem;
+}
+
+.divIcon {
+    width: auto;
+    text-align: center;
+    pointer-events: none;
+    /*加這行可以穿透*/
+}
+
+.EditExPanoramaButton {
+    background-color: #ffffff00;
+    color: #424242;
+    border: 1pt solid #a8967b;
+}
+
+.EditExPanoramaButton:hover {
+    background-color: #a8967b;
+    border: 1pt solid #a8967b;
+}
+
+.EditExPanoramaButton:focus,
+.EditExPanoramaButton:active {
+    background-color: #ffffff00;
+    border: 1pt solid #a8967b;
+    color: #424242;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.finish_btn {
+    background-color: #99a074;
+    border: 1pt solid #99a074;
+}
+
+.finish_btn:hover {
+    background-color: #8a9069;
+    color: #ffffff;
+    border: 1pt solid #8a9069;
+}
+
+.finish_btn:focus,
+.finish_btn:active {
+    background-color: #ffffff00;
+    border: 1pt solid #99a074;
+    color: #424242;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.goback_btn {
+    background-color: #ffffff00;
+    border: 1pt solid #d78559;
+    color: #d78559;
+}
+
+.goback_btn:hover {
+    background-color: #d78559;
+    color: #ffffff;
+    border: 1pt solid #8a9069;
+}
+
+.goback_btn:focus,
+.goback_btn:active {
+    background-color: #ffffff00;
+    border: 1pt solid #d78559;
+    color: #d78559;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.helpRuleButton {
+    text-align: right;
+}
+

@@ -1,0 +1,84 @@
+#addPanorama {
+    background-color: #a8967b;
+    border: none;
+}
+#addPanorama:focus {
+    box-shadow: none;
+}
+
+.EditMyPanoramaButton {
+    background-color: #FFFAD4;
+    color: #424242;
+    border: 1pt solid #a8967b;
+}
+
+.EditMyPanoramaButton:hover {
+    background-color: #a8967b;
+    border: 1pt solid #a8967b;
+}
+
+.EditMyPanoramaButton:focus {
+    background-color: #a8967b;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+}
+
+.remove_btn {
+    border: solid 1px #e38970;
+    border-radius: 4px;
+    background-color: #e38970;
+    color: #ffffff;
+    width: 90pt;
+    height: 30pt;
+}
+
+.remove_btn:hover {
+    background-color: #ffffff;
+    border: 1px solid #e38970;
+    color: #e38970;
+}
+
+.update_btn {
+    border: solid 1px #90c1c1;
+    border-radius: 4px;
+    background-color: #90c1c1;
+    color: #ffffff;
+    width: 90pt;
+    height: 30pt;
+}
+
+.update_btn:hover {
+    background-color: #86b5b5;
+    border: 1pt solid #86b5b5;
+}
+.cancel_btn {
+    background-color: #ffffff;
+    border: 1px solid #a8967b;
+    color: #a8967b;
+    width: 90pt;
+    height: 30pt;
+}
+.cancel_btn:hover {
+    border: solid 1px #a8967b;
+    border-radius: 4px;
+    background-color: #a8967b;
+    color: #ffffff;
+}
+.cancel_btn:focus {
+    box-shadow: none;
+}
+.delete_btn {
+    background-color: #ffffff;
+    border: 1px solid #e38970;
+    color: #e38970;
+    /* width: 90pt;
+    height: 30pt; */
+}
+
+.delete_btn:hover {
+    border: solid 1px #e38970;
+    border-radius: 4px;
+    background-color: #e38970;
+    color: #ffffff;
+}
