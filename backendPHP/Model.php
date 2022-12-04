@@ -1764,14 +1764,14 @@ function editExMoveSpot($msID, $epID, $type ,$pitch, $yaw, $nextScene){
     global $db;
     $sql = "UPDATE `movespot` SET `epID`=?,`type`=?,`pitch`=?,`yaw` = ?,`nextScene`= ? WHERE `msID` = ?;"; //sql指令的insert語法
     $stmt = mysqli_prepare($db, $sql); //prepare sql statement
-    mysqli_stmt_bind_param($stmt, "isiiii",$epID, $type ,$pitch, $yaw, $nextScene, $msID); //bind parameters with variables(將變數bind到sql指令的問號中)
+    mysqli_stmt_bind_param($stmt, "isddii",$epID, $type ,$pitch, $yaw, $nextScene, $msID); //bind parameters with variables(將變數bind到sql指令的問號中)
     mysqli_stmt_execute($stmt);  //執行SQL
 }
 function editExInfoSpot($isID, $epID, $pitch, $yaw, $title, $intro){
     global $db;
     $sql = "UPDATE `infospot` SET `epID`= ?,`pitch`= ? ,`yaw`= ? ,`title`= ?,`intro`= ? WHERE `isID` = ?;"; //sql指令的insert語法
     $stmt = mysqli_prepare($db, $sql); //prepare sql statement
-    mysqli_stmt_bind_param($stmt, "iiissi", $epID, $pitch, $yaw, $title, $intro, $isID); //bind parameters with variables(將變數bind到sql指令的問號中)
+    mysqli_stmt_bind_param($stmt, "iddssi", $epID, $pitch, $yaw, $title, $intro, $isID); //bind parameters with variables(將變數bind到sql指令的問號中)
     mysqli_stmt_execute($stmt);  //執行SQL
 }
 function checkDelete2DImg($csID){
@@ -1818,7 +1818,7 @@ function editExCustomSpot($csID, $iID, $epID, $pitch, $yaw, $itemName, $itemIntr
     global $db;
     $sql = "UPDATE `customspot` SET `iID`= ?,`epID`= ? ,`pitch`= ? ,`yaw`= ? ,`name`= ? ,`intro`= ? ,`imageLink`= ? ,`musicLink`= ?, `imageWidth`= ? ,`imageHeight`= ? WHERE `csID` = ?;"; //sql指令的insert語法
     $stmt = mysqli_prepare($db, $sql); //prepare sql statement
-    mysqli_stmt_bind_param($stmt, "iiiissssssi", $iID, $epID, $pitch, $yaw, $itemName, $itemIntro, $imageLink, $musicLink, $imageWidth, $imageHeight, $csID); //bind parameters with variables(將變數bind到sql指令的問號中)
+    mysqli_stmt_bind_param($stmt, "iiddssssssi", $iID, $epID, $pitch, $yaw, $itemName, $itemIntro, $imageLink, $musicLink, $imageWidth, $imageHeight, $csID); //bind parameters with variables(將變數bind到sql指令的問號中)
     mysqli_stmt_execute($stmt);  //執行SQL
 }
 // ========================== Manage My Item ========================================
