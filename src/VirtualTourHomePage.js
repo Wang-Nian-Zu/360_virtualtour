@@ -117,7 +117,7 @@ function VirtualTourHomePage() {
   const myImage = "./pottery.JPG";
   const config = { // 第一個場景
     showZoomCtrl: false, // 放大縮小的控制圖示按鈕，預設值是 true
-    showControls: true, // 是否顯示控制圖示，預設值是 true
+    showControls: false, // 是否顯示控制圖示，預設值是 true
     compass: true,
     autoRotate: 0,
     autoLoad: true,

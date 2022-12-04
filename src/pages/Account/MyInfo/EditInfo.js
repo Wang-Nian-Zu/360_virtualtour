@@ -103,7 +103,7 @@ const EditInfo = () => {
               selectedImage && (
                 <Row className='p-0'>
                   <Col sm={3}>
-                    <img alt="not found" width={"250px"} height={"150px"} src={URL.createObjectURL(selectedImage)} />
+                    <img alt="not found" width={"250px"} src={URL.createObjectURL(selectedImage)} />
                   </Col>
                   <Col sm={9}>
                     <Button variant="danger" onClick={removeImageChange}>移除相片</Button>

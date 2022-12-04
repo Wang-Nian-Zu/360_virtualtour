@@ -26,6 +26,7 @@ import useAuth from "../pages/LoginRegister/AuthUser";
 import axios from 'axios';
 import icon from "./images/textLogo.png";
 import ScrollToTop from "./ScrollToTop.js";
+import Live2DModel from './Live2DModel.js';
 
 function NavBar() {
   const { auth, user } = useAuth();
@@ -112,6 +113,7 @@ function NavBar() {
           <Route path="/forgetPwd" element={<ForgetPwd />} />
           <Route path="/editPwd" element={<EditPwd />} />
         </Routes>
+        <Live2DModel/>
       </div>
     </Router>
   );

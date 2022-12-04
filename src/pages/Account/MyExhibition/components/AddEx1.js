@@ -102,7 +102,7 @@ const AddEx1 = (props) => {
               data.picture2File && (
                 <Row className='d-flex p-0'>
                   <Col sm={6}>
-                    <img src={URL.createObjectURL(data.picture2File)} className="mb-2" width={"250px"} height={"150pt"} alt="not found" />
+                    <img src={URL.createObjectURL(data.picture2File)} className="mb-2" width={"250px"} alt="not found" />
                   </Col>
                   <Col sm={6}>
                     <Button className='remove_btn' onClick={() => {
@@ -124,7 +124,7 @@ const AddEx1 = (props) => {
               data.picture3File && (
                 <Row className='d-flex p-0'>
                   <Col sm={6}>
-                    <img src={URL.createObjectURL(data.picture3File)} className="mb-2" width={"250px"} height={"150pt"} alt="not found" />
+                    <img src={URL.createObjectURL(data.picture3File)} className="mb-2" width={"250px"} alt="not found" />
                   </Col>
                   <Col sm={6}>
                     <Button className='remove_btn' onClick={() => {
