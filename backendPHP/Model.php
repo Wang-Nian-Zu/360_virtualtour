@@ -1395,6 +1395,123 @@ function deleteMyExhibition($usr,$eID){ //刪掉自己指定的展場
     }
     return $retArr;
 }
+function deleteMyOldExPanorama($epID){
+    global $db ;
+    $sql = "SELECT * FROM exhibitivepanorama WHERE `exhibitivepanorama`.`epID` = ?";  
+    $stmt = mysqli_prepare($db, $sql);//$db是另一個程式生成的資料庫連線物件,  prepare:表示用這個資料庫($db)把sql指令compile好
+    mysqli_stmt_bind_param($stmt,"i",$epID); 
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    if($rs = mysqli_fetch_assoc($result)){
+        $musicLink = $rs["musicLink"];
+        if(($musicLink !== "")&&(isset($musicLink))){//如果語音不為空
+            $str = substr($musicLink, 40);//取網址由前算起27字元之後(http://localhost/backendPHP)的全部字元
+            $filename = '.'.$str;
+            if(file_exists($filename)){
+                unlink($filename);//刪除文件
+            }
+        }
+        //判斷此展場的底部圖是不是引用的，還是自己的
+        if(($rs["thumbnailLink"] !== "")&&isset($rs["thumbnailLink"])){
+            $thumbnailLink = $rs["thumbnailLink"];
+            $sql2 = "SELECT `panorama`.`smallimgLink` FROM exhibitivepanorama INNER JOIN panorama ON
+            `exhibitivepanorama`.`pID` = `panorama`.`pID` WHERE  `exhibitivepanorama`.`pID` = ?"; 
+            $stmt2 = mysqli_prepare($db, $sql2);
+            mysqli_stmt_bind_param($stmt2,"i", $rs['pID']); 
+            mysqli_stmt_execute($stmt2);
+            $result2 = mysqli_stmt_get_result($stmt2);
+            if($rs2 = mysqli_fetch_assoc($result2)){
+                if(isset($rs2['smallimgLink'])){
+                    $smallimgLink = $rs2['smallimgLink'];
+                    if($smallimgLink !== $thumbnailLink){//不是引用原先的panorama的縮圖
+                        $str = substr($thumbnailLink, 40);//取網址由前算起27字元之後(http://localhost/backendPHP)的全部字元
+                        $filename = '.'.$str;
+                        if(file_exists($filename)){
+                            unlink($filename);//刪除文件
+                        }      
+                    }
+                }else{
+                    $str = substr($thumbnailLink, 40);//取網址由前算起27字元之後(http://localhost/backendPHP)的全部字元
+                    $filename = '.'.$str;
+                    if(file_exists($filename)){
+                        unlink($filename);//刪除文件
+                    }  
+                }
+            }
+        }
+        //刪除該展示中全景圖的資訊點
+        $sql = "DELETE FROM infospot WHERE `infospot`.`epID` = ?";  
+        $stmt = mysqli_prepare($db, $sql);
+        mysqli_stmt_bind_param($stmt,"i",$epID); 
+        mysqli_stmt_execute($stmt);
+        //刪除該展示中全景圖的移動點
+        $sql = "DELETE FROM movespot WHERE `movespot`.`epID` = ?";  
+        $stmt = mysqli_prepare($db, $sql);
+        mysqli_stmt_bind_param($stmt,"i",$epID); 
+        mysqli_stmt_execute($stmt);
+        //刪除客製化展品點的展品代表圖以及語音檔案
+        $sql3 = "SELECT * ,`customspot`.`musicLink` AS `cMusicLink`, `item`.`musicLink` AS iMusicLink 
+        FROM `exhibitivepanorama`INNER JOIN customspot ON `exhibitivepanorama`.`epID` = `customspot`.`epID` 
+        INNER JOIN item ON `customspot`.`iID` = `item`.`iID` 
+        WHERE  `exhibitivepanorama`.`epID` = ?"; 
+        $stmt3 = mysqli_prepare($db, $sql3);
+        mysqli_stmt_bind_param($stmt3,"i", $epID); 
+        mysqli_stmt_execute($stmt3);
+        $result3 = mysqli_stmt_get_result($stmt3);
+        while($rs3 = mysqli_fetch_assoc($result3)){
+            //刪除展品代表圖
+            if((isset($rs3['imageLink'])) && ($rs3['imageLink'] !== "")){
+                $imageLink = $rs3['imageLink'];
+                if((isset($rs3['2DimgLink'])) && ($rs3['2DimgLink'] !== "")){
+                    $img2DLink = $rs3['2DimgLink'];
+                    if($imageLink !== $img2DLink){//不是引用原先的panorama的縮圖
+                        $str = substr($imageLink, 40);//取網址由前算起27字元之後(http://localhost/backendPHP)的全部字元
+                        $filename = '.'.$str;
+                        if(file_exists($filename)){
+                            unlink($filename);//刪除文件
+                        }      
+                    }
+                }else{
+                    $str = substr($imageLink, 40);//取網址由前算起27字元之後(http://localhost/backendPHP)的全部字元
+                    $filename = '.'.$str;
+                    if(file_exists($filename)){
+                        unlink($filename);//刪除文件
+                    }      
+                }
+            }
+            //刪除語音檔案
+            if((isset($rs3['cMusicLink'])) && ($rs3['cMusicLink'] !== "")){
+                $cMusicLink = $rs3['cMusicLink'];
+                if((isset($rs3['iMusicLink'])) && ($rs3['iMusicLink'] !== "")){
+                    $iMusicLink = $rs3['iMusicLink'];
+                    if($cMusicLink !== $iMusicLink){//不是引用原先的panorama的縮圖
+                        $str = substr($cMusicLink, 40);//取網址由前算起27字元之後(http://localhost/backendPHP)的全部字元
+                        $filename = '.'.$str;
+                        if(file_exists($filename)){
+                            unlink($filename);//刪除文件
+                        }      
+                    }
+                }else{
+                    $str = substr($cMusicLink, 40);//取網址由前算起27字元之後(http://localhost/backendPHP)的全部字元
+                    $filename = '.'.$str;
+                    if(file_exists($filename)){
+                        unlink($filename);//刪除文件
+                    }      
+                }
+            }
+        }
+        //刪除該展示中全景圖的所有客製化展品點
+        $sql = "DELETE FROM customspot WHERE `customspot`.`epID` = ?";  
+        $stmt = mysqli_prepare($db, $sql);
+        mysqli_stmt_bind_param($stmt,"i",$epID); 
+        mysqli_stmt_execute($stmt);
+
+        $sql = "DELETE FROM exhibitivepanorama where `exhibitivepanorama`.`epID` = ?";  
+        $stmt = mysqli_prepare($db, $sql);
+        mysqli_stmt_bind_param($stmt,"i",$epID); 
+        mysqli_stmt_execute($stmt);//執行一個sql指令
+    }
+}
 //-----------------------------------------------------------------------------------
 function addMyExhibition($name, $usr, $eIntro, $start, $close, $frontPictureLink, $permission, $mapImgLink, $picture2Link,$picture3Link){
     date_default_timezone_set('Asia/taipei');
@@ -1731,6 +1848,19 @@ function editMyExhibition($eID, $usr, $name, $eIntro, $start, $close, $frontPict
     $stmt = mysqli_prepare($db, $sql); //prepare sql statement
     mysqli_stmt_bind_param($stmt, "sssssssssii" ,$name, $eIntro, $start, $close, $frontPictureLink, $permission, $mapImgLink, $picture2Link, $picture3Link, $eID, $usr); //bind parameters with variables(將變數bind到sql指令的問號中)
     mysqli_stmt_execute($stmt);  //執行SQL
+}
+function getMyOriginExPanorama($eID) { //撈出編輯展場的所有原先展示中全景圖的epID撈出
+    global $db;
+    $sql = "SELECT `exhibitivepanorama`.`epID` FROM exhibitivepanorama WHERE `exhibitivepanorama`.`eID` = ?;";
+    $stmt = mysqli_prepare($db, $sql);
+    mysqli_stmt_bind_param($stmt,"i",$eID); 
+    mysqli_stmt_execute($stmt);//執行一個sql指令
+    $result = mysqli_stmt_get_result($stmt);
+    $retArr=array(); //用一個array存下面的每一筆資料(一筆資料也是一個array)
+    while($rs = mysqli_fetch_assoc($result)){
+        $retArr[] = $rs['epID'];
+    }
+    return $retArr;
 }
 function checkDeleteSmallImg($epID){
     global $db;

@@ -1086,6 +1086,8 @@ switch ($act) { //用switch語法，判斷act這個變數要做哪件事
                 $panoKeyArray = array();//存fakeID與epID的對應
                 $myPanoramaList = json_decode($_REQUEST["myPanoramaList"],true);//要先json decode
                 if(is_countable($myPanoramaList) && count($myPanoramaList) > 0){
+                    $myOriginExPanoArr = getMyOriginExPanorama($eID); //把編輯展場的所有原先展示中全景圖的epID撈出，存在一個陣列中
+                    $myNewExPanoArr = array(); //只記錄新的展示中全景圖有沒有保留舊epID
                     for($i = 0 ; $i < count($myPanoramaList) ; $i++) {
                         $fakeID = $myPanoramaList[$i]['fakeID'];
                         $pID = $myPanoramaList[$i]['pID'];
@@ -1094,6 +1096,7 @@ switch ($act) { //用switch語法，判斷act這個變數要做哪件事
                         $mapY = $myPanoramaList[$i]['mapY'];
                         if((isset($myPanoramaList[$i]['epID']))&&($myPanoramaList[$i]['epID'] !== "")){
                             $epID = $myPanoramaList[$i]['epID'];
+                            $myNewExPanoArr[] = $epID ; //加入新展示中全景圖陣列裡面
                         }else{
                             $epID = 0;
                         }
@@ -1168,6 +1171,17 @@ switch ($act) { //用switch語法，判斷act這個變數要做哪件事
                         $panoKeyArray[$fakeID] = $epID; //陣列的key是fakeID，而value則是真的資料庫的epID
                         if($fakeID === $firstScene){ //當此全景圖是展場的第一個全景圖
                             updateExfirstScene($eID, $epID);//更改該展場的第一張全景圖
+                        }
+                    }
+                    for($i = 0 ; $i < count($myOriginExPanoArr) ; $i++){ //遍歷舊的展示中全景圖
+                        $deleteExPano = true;
+                        for($j = 0 ; $j < count($myNewExPanoArr) ; $j++){
+                            if($myOriginExPanoArr[$i] === $myNewExPanoArr[$j]){//核對新的展示中全景圖
+                                $deleteExPano = false;
+                            }
+                        }
+                        if($deleteExPano){ //刪除此展示中全景圖、該全景圖的所有移動點、資訊點以及客製化展品點
+                            deleteMyOldExPanorama($myOriginExPanoArr[$i]);
                         }
                     }
                 }

@@ -74,26 +74,18 @@ const EditExForm = (props) => {
                 (typeof data.frontPictureFile === "string")
                   ? (
                     <Row className='d-flex p-0'>
-                      <Col sm={6}>
                         <img alt="not found" width={"250px"} src={data.frontPictureFile} />
-                      </Col>
-                      <Col sm={6}>
                         <Button className="remove_btn" onClick={() => {
                           setData({ ...data, frontPicture: "", frontPictureFile: null });
                         }}>移除</Button>
-                      </Col>
                     </Row>
                   )
                   : (
                     <Row className='d-flex p-0'>
-                      <Col sm={6}>
                         <img alt="not found" width={"250px"} src={URL.createObjectURL(data.frontPictureFile)} />
-                      </Col>
-                      <Col sm={6}>
                         <Button className="remove_btn" onClick={() => {
                           setData({ ...data, frontPicture: "", frontPictureFile: null });
                         }}>移除</Button>
-                      </Col>
                     </Row>
                   )
               )
@@ -111,26 +103,18 @@ const EditExForm = (props) => {
                 (typeof data.picture2File === "string")
                   ? (
                     <Row className='d-flex p-0'>
-                      <Col sm={6}>
                         <img src={data.picture2File} width={"250px"} alt="not found" />
-                      </Col>
-                      <Col sm={6}>
                         <Button className="remove_btn" onClick={() => {
                           setData({ ...data, picture2: "", picture2File: null });
                         }}>移除</Button>
-                      </Col>
                     </Row>
                   )
                   : (
                     <Row className='d-flex p-0'>
-                      <Col sm={6}>
                         <img src={URL.createObjectURL(data.picture2File)} width={"250px"} alt="not found" />
-                      </Col>
-                      <Col sm={6}>
                         <Button className="remove_btn" onClick={() => {
                           setData({ ...data, picture2: "", picture2File: null });
                         }}>移除</Button>
-                      </Col>
                     </Row>
                   )
               )
@@ -148,26 +132,18 @@ const EditExForm = (props) => {
                 (typeof data.picture3File === "string")
                   ? (
                     <Row className='d-flex p-0'>
-                      <Col sm={6}>
                         <img src={data.picture3File} width={"250px"} alt="not found" />
-                      </Col>
-                      <Col sm={6}>
                         <Button className="remove_btn" onClick={() => {
                           setData({ ...data, picture3: "", picture3File: null });
                         }}>移除</Button>
-                      </Col>
                     </Row>
                   )
                   : (
                     <Row className='d-flex p-0'>
-                      <Col sm={6}>
                         <img src={URL.createObjectURL(data.picture3File)} width={"250px"} alt="not found" />
-                      </Col>
-                      <Col sm={6}>
                         <Button className="remove_btn" onClick={() => {
                           setData({ ...data, picture3: "", picture3File: null });
                         }}>移除</Button>
-                      </Col>
                     </Row>
                   )
               )

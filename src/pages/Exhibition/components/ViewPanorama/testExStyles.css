@@ -10,7 +10,7 @@
     position: absolute;
     top: 70px;
     left: 0px;
-    width: 400px;
+    width: 390px;
   }
   
   .pMapSlidingMenu {
@@ -42,7 +42,7 @@
   #pMusicSlidingMenu {
     padding: 1px;
     display: inline-block;
-    width: 600px;
+    width: 400px;
   }
   
   .pMusicSlidingMenu {
