@@ -84,10 +84,10 @@ const PanoramaDiv = (props) => {
             var pos = parseInt(sMenu.style.left);
             pos -= 4;
             sMenu.style.left = pos + "px";
-            if (pos > -500) {
+            if (pos > -360) {
                 window.setTimeout(hideMenu, 5);
             }
-            if (pos === -500) {
+            if (pos === -360) {
                 setMenuIcon("▶");
                 document.getElementById("pMapRightPanel").onclick = showMenu;
             }
