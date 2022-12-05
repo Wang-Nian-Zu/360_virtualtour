@@ -253,10 +253,10 @@ const EditCustomModal = (props) => {
                                             </Row>
                                             <Row>
                                                 {
-                                                    editValue.musicFile && (
+                                                    editValue.musicLinkFile && (
                                                         <div>
                                                             <div>
-                                                                <audio alt="not found" width={"250px"} src={URL.createObjectURL(editValue.musicFile)} controls />
+                                                                <audio alt="not found" width={"250px"} src={URL.createObjectURL(editValue.musicLinkFile)} controls />
                                                             </div>
                                                             <div className='mt-3'>
                                                                 <Button variant="danger" onClick={() => {

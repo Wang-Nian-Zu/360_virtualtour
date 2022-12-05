@@ -1,53 +1,169 @@
-.App {
-  font-family: sans-serif;
-  height: 400px;
+@media (max-width: 319.99px) {
+
+  /*黃色橢圓*/
+  .shape {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+    width: 320px;
+    height: 220px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  /*藍色方形*/
+  .shape2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+    width: 360px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+
+  #webImg {
+    width: 300px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 719.99px) {
+  .shape {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+    width: 350px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  .shape2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+    width: 360px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+
+  #webImg {
+    width: 300px;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 1024px) {
+  .shape {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+    width: 480px;
+    height: 340px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  .shape2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199.99px) {
+  .shape {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+    width: 480px;
+    height: 340px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  .shape2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .shape {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+    width: 480px;
+    height: 340px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  .shape2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s;
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
 }
 
 .divIcon {
   width: auto;
   text-align: center;
-  pointer-events: none;/*加這行可以穿透*/
+  pointer-events: none;
+  /*加這行可以穿透*/
   height: 600px;
+  /*黃色橢圓在場景的高度*/
 }
 
 .bottomIcon {
   width: auto;
   text-align: center;
-  pointer-events: none;/*加這行可以穿透*/
+  pointer-events: none;
+  /*加這行可以穿透*/
 }
 
 .webIcon {
   text-align: center;
 }
 
-.shape {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  transition: all 0.5s;
-  width: 440px;
-  height: 340px;
-  margin: 0 auto;
-  border-radius: 50%;
-}
-
-.shape2 {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  transition: all 0.5s;
-  width: 500px;
-  height: 300px;
-  margin: 0 auto;
-  border-radius: 8px;
-}
 #intro {
   font-size: 14px;
 }
 
-.mainUI{
+.mainUI {
   width: 350px;
   height: 200px;
   position: relative;
@@ -55,7 +171,7 @@
   background-position: center;
   background-repeat: no-repeat;
   transition: all 0.5s;
-  font-size: 35px; 
+  font-size: 35px;
 }
 
 div.custom-tooltip span {
@@ -70,10 +186,12 @@ div.custom-tooltip span {
   margin-left: -220px;
   cursor: default;
 }
-div.custom-tooltip:hover span{
+
+div.custom-tooltip:hover span {
   /*hover 是在控制當滑鼠移至某元件時，某元件該如何反應*/
   visibility: visible;
 }
+
 div.custom-tooltip:hover span:after {
   content: '';
   position: absolute;
@@ -86,10 +204,12 @@ div.custom-tooltip:hover span:after {
   left: -10px;
   margin: 0 50%;
 }
+
 .btn_action.pp {
   /* margin-top: 10px; */
   font-size: 1.8rem;
 }
+
 #music-toggle {
   position: absolute;
   /* top: 35px; */

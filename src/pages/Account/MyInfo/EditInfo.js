@@ -95,20 +95,16 @@ const EditInfo = () => {
         <Row>
           <h5><span style={{ color: '#d78559' }}>| </span>大頭照</h5>
           <Col sm={3}>
-            <Form.Control className="photo ms-3" style={{ width: '200pt' }} type="file" placeholder={`代表圖`}
+            <Form.Control className="photo ms-3" style={{ width: '200px' }} type="file" placeholder={`代表圖`}
               accept="image/*,.jpg,.png" onChange={onImageChange} name="photo_new" value={data.photo_new || ''}></Form.Control>
           </Col>
           <Col sm={9}>
             {
               selectedImage && (
-                <Row className='p-0'>
-                  <Col sm={3}>
+                <>
                     <img alt="not found" width={"250px"} src={URL.createObjectURL(selectedImage)} />
-                  </Col>
-                  <Col sm={9}>
                     <Button variant="danger" onClick={removeImageChange}>移除相片</Button>
-                  </Col>
-                </Row>
+                </>
               )
             }
             {closeImg && (<img width={"250px"} src={data.photo || ''} alt={data.first_name} />)}

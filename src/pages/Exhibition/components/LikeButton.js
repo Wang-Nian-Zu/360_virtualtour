@@ -8,7 +8,7 @@ const LikeButton = (props) => {
   const {eID} = props ; // 這行很重要，不然會抓不到eID
   const [likes, setLikes] = useState(""); // 喜歡此展覽的有多少數量
   const [isClicked, setIsClicked] = useState(false); // 紀錄like button是否被按下
-  const [likeTXT, setLikeTXT] = useState('Like');// like button現在是甚麼文字
+  const [likeTXT, setLikeTXT] = useState('按讚');// like button現在是甚麼文字
   const [likeBootstrap, setLikeBootstrap] = useState("outline-danger"); // like button現在的CSS樣式
   
   useEffect(() => {
@@ -41,7 +41,7 @@ const LikeButton = (props) => {
             .then((res) => {
                 console.log(res);
                 if(res.data.like){ // 表示按過愛心
-                    setLikeTXT('Liked'); // 換成按過按鈕的UI
+                    setLikeTXT('已按讚'); // 換成按過按鈕的UI
                     setLikeBootstrap('danger'); // 換成按過按鈕的UI
                     setIsClicked(true); // 這個是最重要的，紀錄該button已經壓下
                 }
@@ -62,14 +62,14 @@ const LikeButton = (props) => {
     .then((res) => {
         if(res.data.Login){ // 有登入
             if (isClicked) {
-                setLikeTXT('Like');
+                setLikeTXT('按讚');
                 setLikeBootstrap('outline-danger');
                 setLikes({
                     likeCount: likes.likeCount - 1
                 });
                 CancelLike(eID);
             }else{
-                setLikeTXT('Liked');
+                setLikeTXT('已按讚');
                 setLikeBootstrap('danger');
                 setLikes({
                     likeCount: likes.likeCount + 1

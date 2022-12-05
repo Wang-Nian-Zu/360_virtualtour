@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname , search } = useLocation();
 
   useEffect(() => {
     // "document.documentElement.scrollTo" is the magic for React Router Dom v6
@@ -11,7 +11,7 @@ export default function ScrollToTop() {
       left: 0,
       behavior: "instant", // Optional if you want to skip the scrolling animation
     });
-  }, [pathname]);
+  }, [pathname, search]);
 
   return null;
 }

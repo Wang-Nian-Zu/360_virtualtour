@@ -79,15 +79,11 @@ const AddEx1 = (props) => {
             <input type="file" name="frontPicture" className="form-control mb-2" onChange={onFileChange} accept="image/*,.jpg,.png" value={data.frontPicture} />
             {
               data.frontPictureFile && (
-                <Row className='d-flex p-0'>
-                  <Col sm={6}>
-                    <img alt="not found" className="mb-2" width={"250px"} src={URL.createObjectURL(data.frontPictureFile)} />
-                  </Col>
-                  <Col sm={6}>
+                <Row className='d-flex p-0'>                  
+                    <img alt="not found" className="mb-2" width={"250px"} src={URL.createObjectURL(data.frontPictureFile)} />                                    
                     <Button className="remove_btn" onClick={() => {
                       setData({ ...data, frontPicture: "", frontPictureFile: null });
-                    }}> 移除 </Button>
-                  </Col>
+                    }}> 移除 </Button>                  
                 </Row>
               )}
           </Col>
@@ -101,14 +97,10 @@ const AddEx1 = (props) => {
             {
               data.picture2File && (
                 <Row className='d-flex p-0'>
-                  <Col sm={6}>
                     <img src={URL.createObjectURL(data.picture2File)} className="mb-2" width={"250px"} alt="not found" />
-                  </Col>
-                  <Col sm={6}>
                     <Button className='remove_btn' onClick={() => {
                       setData({ ...data, picture2: "", picture2File: null });
                     }}> 移除 </Button>
-                  </Col>
                 </Row>
               )
             }
@@ -123,14 +115,10 @@ const AddEx1 = (props) => {
             {
               data.picture3File && (
                 <Row className='d-flex p-0'>
-                  <Col sm={6}>
                     <img src={URL.createObjectURL(data.picture3File)} className="mb-2" width={"250px"} alt="not found" />
-                  </Col>
-                  <Col sm={6}>
                     <Button className='remove_btn' onClick={() => {
                       setData({ ...data, picture3: "", picture3File: null });
                     }}> 移除 </Button>
-                  </Col>
                 </Row>
               )
             }

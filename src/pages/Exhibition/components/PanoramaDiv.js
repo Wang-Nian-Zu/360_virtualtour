@@ -367,6 +367,14 @@ const PanoramaDiv = (props) => {
         span.style.marginLeft = -(span.scrollWidth - hotSpotDiv.offsetWidth) / 2 - 10 + 'px';
         span.style.marginTop = -span.scrollHeight - 12 + 'px';
     };
+    const panoramaIsLoad = () => {
+        if(ReactPannellum.isOrientationSupported()){
+          if(!ReactPannellum.isOrientationActive()){
+            ReactPannellum.startOrientation();
+            console.log('Device starts Orientation');
+          }
+        }
+    }
     return (
         <>
             <div className="pannellum" id="panoramaDiv">
@@ -374,7 +382,7 @@ const PanoramaDiv = (props) => {
                     (firstSceneisLoad)
                     && (
                         <>
-                            <ReactPannellum id="panorama" imageSource={image} sceneId={sceneId} style={style} config={config}>
+                            <ReactPannellum id="panorama" imageSource={image} sceneId={sceneId} style={style} config={config} onPanoramaLoaded={panoramaIsLoad}>
                                 {(mapImgLink !== "") && (
                                     <div id="pMapControls">
                                         <div id="pMapSlidingMenu" className="pMapSlidingMenu">

@@ -15,7 +15,7 @@ const CuratorCard = (props) => {
           <Card.Text className='ellipsis'> {cIntro} </Card.Text>
         </Card.Body>
         <Card.Footer className='d-flex justify-content-center'>
-          <Link to={"/DetailCurator?id=" + user.id} className="btn moreInfo">了解更多 ⮞</Link>
+          <Link to={"/DetailCurator?id=" + user.id} className="btn moreInfo">了解更多 ▶</Link>
         </Card.Footer>
       </Card>
     </CardGroup>

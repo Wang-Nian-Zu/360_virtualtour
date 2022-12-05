@@ -7,7 +7,7 @@ const SubscribeB = (props) => {
   const {id} = props ;
   const [Subs, setSubs] = useState("");
   const [isClicked, setIsClicked] = useState(false);
-  const [SubTXT, setSubTXT] = useState('Subscribe');
+  const [SubTXT, setSubTXT] = useState('訂閱');
   const [SubBootstrap, setSubBootstrap] = useState("outline-success");
   useEffect(() => {
     axios({
@@ -37,7 +37,7 @@ const SubscribeB = (props) => {
             })
             .then((res) => {
                 if(res.data.sub){ // 表示按過訂閱
-                    setSubTXT('Subscribed'); // 換成按過按鈕的UI
+                    setSubTXT('已訂閱'); // 換成按過按鈕的UI
                     setSubBootstrap('success'); // 換成按過按鈕的UI
                     setIsClicked(true); // 這個是最重要的，紀錄該button已經壓下
                 }
@@ -59,14 +59,14 @@ const SubscribeB = (props) => {
     .then((res) => {
         if(res.data.Login){ // 有登入
             if (isClicked) {
-                setSubTXT('Subscribe');
+                setSubTXT('訂閱');
                 setSubBootstrap('outline-success');
                 setSubs({
                     SubCount: Subs.SubCount - 1
                 });
                 unSubscribe(id)
             }else{
-                setSubTXT('Subscribed');
+                setSubTXT('已訂閱');
                 setSubBootstrap('success');
                 setSubs({
                     SubCount: Subs.SubCount + 1

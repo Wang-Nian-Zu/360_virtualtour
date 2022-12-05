@@ -10,13 +10,13 @@ function setHotspot(hotSpotDiv, args) {
   var p = document.createElement("p");
   hotSpotDiv.appendChild(p);
   p.innerHTML = "<br/>歡迎來到";
-  p.setAttribute("style", "font-size:16pt;position:absolute;left:135pt;font-weight:bold;");
+  p.setAttribute("style", "font-size:16pt;font-weight:bold;");
   var p1 = document.createElement("p");
   hotSpotDiv.appendChild(p1);
-  p1.innerHTML = "<br/><br/>";
   p1.setAttribute("style", "font-size: 16pt;");
   var elem = document.createElement("img");
   hotSpotDiv.appendChild(elem);
+  elem.setAttribute("id", "webImg");
   elem.setAttribute("width", "450px");
   elem.setAttribute("style", "z-index:2");
   elem.src = args.img;
@@ -117,7 +117,7 @@ function VirtualTourHomePage() {
   const myImage = "./pottery.JPG";
   const config = { // 第一個場景
     showZoomCtrl: false, // 放大縮小的控制圖示按鈕，預設值是 true
-    showControls: false, // 是否顯示控制圖示，預設值是 true
+    showControls: true, // 是否顯示控制圖示，預設值是 true
     compass: true,
     autoRotate: 0,
     autoLoad: true,
@@ -143,21 +143,32 @@ function VirtualTourHomePage() {
         "createTooltipFunc": setHotspot,
         "createTooltipArgs": {img: require('./components/images/textLogo.png')},
         scale: true
-      },
-      {
-        yaw: 90,
-        pitch: -90,
-        cssClass: "bottomIcon",
-        "createTooltipFunc": setbottomHotspot,
-        "createTooltipArgs": {img: require('./components/images/bottomLogo.png')},
-        scale: true
       }
-    ],
+    ]
   };
   const style = {
     width: "100%",
     height: "200%"
   }
+  const panoramaIsLoad = () => {
+    if(ReactPannellum.isOrientationSupported()){
+      if(!ReactPannellum.isOrientationActive()){
+        ReactPannellum.startOrientation();
+        console.log('Device starts Orientation');
+      }
+    }else{
+      let hs = {
+        yaw: 90,
+        pitch: -90,
+        cssClass: "bottomIcon",
+        "createTooltipFunc": setbottomHotspot,
+        "createTooltipArgs": { img: require('./components/images/bottomLogo.png') },
+        scale: true
+      };
+      ReactPannellum.addHotSpot(hs, "firstScene");
+      console.log("not suppoet!!")
+    }
+  };
   return (
     <div className="pannellum" id="panoramaDiv">
       {/* 全景圖 */}
@@ -167,6 +178,7 @@ function VirtualTourHomePage() {
         imageSource={myImage}
         style={style}
         config={config}
+        onPanoramaLoaded={panoramaIsLoad}
       >
         <div id="controlButton">
           <div id="music-toggle" className="pnlm-controls">
