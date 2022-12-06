@@ -75,7 +75,7 @@ const SubscribeB = (props) => {
             }
             setIsClicked(!isClicked);
         }else{ // 未登入
-            alert('目前為訪客模式，登入後才能按愛心')
+            alert('目前為訪客模式，登入後才能按訂閱')
         }
     })   
     .catch(console.error);

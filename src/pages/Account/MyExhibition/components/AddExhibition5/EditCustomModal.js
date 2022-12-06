@@ -192,7 +192,7 @@ const EditCustomModal = (props) => {
                                     <Tabs defaultActiveKey="originImage" id="tab" className="mb-3">
                                         <Tab eventKey="originImage" title="展品原圖">
                                             <Row>
-                                                <Col>展品縮圖<span style={{ color: "red" }}>*</span></Col>
+                                                <Col>展品預覽圖<span style={{ color: "red" }}>*</span></Col>
                                                 {
                                                     ((typeof originValue.imageLink === "object") && (originValue.imageLink !== null))
                                                         ? (<Col><img src={URL.createObjectURL(originValue.imageLink)} alt="img_not_found" style={{ width: "250px" }} /></Col>)
@@ -202,7 +202,7 @@ const EditCustomModal = (props) => {
                                         </Tab>
                                         <Tab eventKey="editPano" title="上傳(更新)">
                                             <Row>
-                                                <Col>重新上傳展品縮圖</Col>
+                                                <Col>重新上傳展品預覽圖</Col>
                                                 <Col>
                                                     <input type="file" name="imageLink" className="form-control"
                                                         accept="image/*,.jpg,.png" onChange={onFileChange} value={editValue.imageLink} />

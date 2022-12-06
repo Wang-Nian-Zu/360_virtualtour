@@ -16,7 +16,7 @@ const SearchPanoramaBar = ({ list, setSearchTerm }) => {
         <Form className="d-flex">
             <Form.Control
                 type="search"
-                placeholder="Search"
+                placeholder="搜尋全景圖"
                 className="me-2"
                 aria-label="Search"
                 onChange={handleSearchChange}

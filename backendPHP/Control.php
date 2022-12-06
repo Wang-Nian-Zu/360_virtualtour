@@ -1107,27 +1107,13 @@ switch ($act) { //用switch語法，判斷act這個變數要做哪件事
                             $smallimgLink = "https://360.systemdynamics.tw/backendPHP/PanoramaSmallImg/".$smallimgFilename;
                             move_uploaded_file($smallimgFiles["tmp_name"], $_SERVER['DOCUMENT_ROOT']."/backendPHP/PanoramaSmallImg/".$smallimgFilename);
                             if($epID !== 0){//已經有epID的展場，sql指令改成用update
-                                $deleteSmallImgLink = checkDeleteSmallImg($epID);//檢查資料庫是否有Link連結
-                                if($deleteSmallImgLink !== ""){
-                                    $str = substr($deleteSmallImgLink, 40);//取網址由前算起27字元之後(http://localhost/backendPHP)的全部字元
-                                    $filename = '.'.$str;
-                                    if(file_exists($filename)){
-                                        unlink($filename);//刪除文件
-                                    }
-                                } 
+                                checkDeleteSmallImgOrNot($epID);
                             }
                         }else{
                             $smallimgLink = $myPanoramaList[$i]['smallimgLink'];
                             if($smallimgLink === ''){//表示要清空，刪掉舊的
                                 if($epID !== 0){//已經存在資料庫的展示中全景圖
-                                    $deleteSmallImgLink = checkDeleteSmallImg($epID);//檢查資料庫是否有Link連結
-                                    if($deleteSmallImgLink !== ""){
-                                        $str = substr($deleteSmallImgLink, 40);//取網址由前算起27字元之後(http://localhost/backendPHP)的全部字元
-                                        $filename = '.'.$str;
-                                        if(file_exists($filename)){
-                                            unlink($filename);//刪除文件
-                                        }
-                                    } 
+                                    checkDeleteSmallImgOrNot($epID); 
                                 }
                             }
                         }        
@@ -1178,10 +1164,85 @@ switch ($act) { //用switch語法，判斷act這個變數要做哪件事
                         for($j = 0 ; $j < count($myNewExPanoArr) ; $j++){
                             if($myOriginExPanoArr[$i] === $myNewExPanoArr[$j]){//核對新的展示中全景圖
                                 $deleteExPano = false;
+                                break;
                             }
                         }
                         if($deleteExPano){ //刪除此展示中全景圖、該全景圖的所有移動點、資訊點以及客製化展品點
                             deleteMyOldExPanorama($myOriginExPanoArr[$i]);
+                        }
+                    }
+                    $oldPanoMoveSpotArray = array(); //二維陣列
+                    $oldPanoInfoSpotArray = array(); //二維陣列
+                    $oldPanoCustomSpotArray = array(); //二維陣列
+                    for($i = 0 ; $i < count($myNewExPanoArr) ; $i++){ //遍歷在新的展場中舊的展示中全景圖會繼續存在的
+                        //找出是否他們有沒有一些舊的移動點、資訊點、或客製化展品點是要刪除
+                        $stringEpID = (string)$myNewExPanoArr[$i];
+                        $oldPanoMoveSpotArray[$stringEpID] = getPanoMoveSpotArray($myNewExPanoArr[$i]);
+                        $oldPanoInfoSpotArray[$stringEpID] = getPanoInfoSpotArray($myNewExPanoArr[$i]);
+                        $oldPanoCustomSpotArray[$stringEpID] = getPanoCustomSpotArray($myNewExPanoArr[$i]);
+                    }
+                    //刪除還留著的全景圖中移動點已經被前端刪除了===========================================
+                    for($i = 0 ; $i < count($oldPanoMoveSpotArray) ; $i++){ //遍歷每一個有留下來的ep場景
+                        $stringEpID = (string)$myNewExPanoArr[$i];
+                        for($j = 0 ; $j < count($oldPanoMoveSpotArray[$stringEpID]) ; $j++){ //遍歷每一個場景的移動點們
+                            $oldMoveSpotDelete = true; //是不是要刪除移動點
+                            $moveSpotsArray = json_decode($_REQUEST["MoveSpotsArray"],true);
+                            if(is_countable($moveSpotsArray) && count($moveSpotsArray) > 0){
+                                for($m = 0 ; $m < count($moveSpotsArray) ; $m++){ //前端傳過來的所有msID
+                                    if(isset($moveSpotsArray[$m]['msID'])&&($moveSpotsArray[$m]['msID'] !== "")){
+                                        if($oldPanoMoveSpotArray[$stringEpID][$j] === $moveSpotsArray[$m]['msID']){
+                                            $oldMoveSpotDelete = false;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            if($oldMoveSpotDelete){
+                                deleteOldMoveSpot($oldPanoMoveSpotArray[$stringEpID][$j]);
+                            }
+                        }
+                    }
+                    //刪除還留著的全景圖中資訊點已經被前端刪除了===========================================
+                    for($i = 0 ; $i < count($oldPanoInfoSpotArray) ; $i++){ //遍歷每一個有留下來的ep場景
+                        $stringEpID = (string)$myNewExPanoArr[$i];
+                        for($j = 0 ; $j < count($oldPanoInfoSpotArray[$stringEpID]) ; $j++){ //遍歷每一個場景的資訊點們
+                            $oldInfoSpotDelete = true; //是不是要刪除移動點
+                            $infoSpotsArray = json_decode($_REQUEST["InfoSpotsArray"],true);
+                            if(is_countable($infoSpotsArray) && count($infoSpotsArray) > 0){
+                                for($m = 0 ; $m < count($infoSpotsArray) ; $m++){ //前端傳過來的所有msID
+                                    if(isset($infoSpotsArray[$m]['isID'])&&($infoSpotsArray[$m]['isID'] !== "")){
+                                        if($oldPanoInfoSpotArray[$stringEpID][$j] === $infoSpotsArray[$m]['isID']){
+                                            $oldInfoSpotDelete = false;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            if($oldInfoSpotDelete){
+                                deleteOldInfoSpot($oldPanoInfoSpotArray[$stringEpID][$j]);
+                            }
+                        }
+                    }
+                    //刪除還留著的全景圖中客製化展品點已經被前端刪除了===========================================
+                    for($i = 0 ; $i < count($oldPanoCustomSpotArray) ; $i++){ //遍歷每一個有留下來的ep場景
+                        $stringEpID = (string)$myNewExPanoArr[$i];
+                        for($j = 0 ; $j < count($oldPanoCustomSpotArray[$stringEpID]) ; $j++){ //遍歷每一個場景的客製化展品點們
+                            $oldCustomSpotDelete = true; //是不是要刪除移動點
+                            $customSpotsArray = json_decode($_REQUEST["CustomSpotsArray"],true);
+                            if(is_countable($customSpotsArray) && count($customSpotsArray) > 0){
+                                for($m = 0 ; $m < count($customSpotsArray) ; $m++){ //前端傳過來的所有msID
+                                    if(isset($customSpotsArray[$m]['csID'])&&($customSpotsArray[$m]['csID'] !== "")){
+                                        if($oldPanoCustomSpotArray[$stringEpID][$j] === $customSpotsArray[$m]['csID']){
+                                            $oldCustomSpotDelete = false;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            if($oldCustomSpotDelete){
+                                deleteOldCustomSpotFile($oldPanoCustomSpotArray[$stringEpID][$j]);
+                                deleteOldCustomSpot($oldPanoCustomSpotArray[$stringEpID][$j]);
+                            }
                         }
                     }
                 }

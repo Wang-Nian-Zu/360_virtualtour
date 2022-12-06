@@ -117,7 +117,7 @@ const DetailCurator = () => {
           </Col>
           <Col sm={10} md={10}>
             <h3 className='pb-3'><span style={{ color: '#e38970' }}>| </span><b> 自我介紹 </b></h3>
-            <p className='pb-3'> &emsp;{data.intro}{data.intro}{data.intro}{data.intro}</p>
+            <p className='pb-3'> &emsp;{data.intro}</p>
             <h3 className='pb-3'><span style={{ color: '#e38970' }}>| </span><b>{data.first_name} {data.last_name}的展覽</b></h3>
             <div className='p-3'>
               { (value_1 < 720) ?

@@ -45,7 +45,7 @@ const ExhibitionMap = (props) => {
             span.innerHTML = name;
             span.style.position = "absolute";
             span.style.width = span.scrollWidth-100 + 'px';
-            span.style.marginLeft = (mapX * myImgRef.current.clientWidth)-280+'px';
+            span.style.marginLeft = (mapX * myImgRef.current.clientWidth)-200+'px';
             span.style.marginTop = -(myImgRef.current.clientHeight)+(mapY*myImgRef.current.clientHeight)-30+ 'px';
             document.getElementById("mapDiv").appendChild(markDiv);
         }
@@ -54,8 +54,8 @@ const ExhibitionMap = (props) => {
     return (
         <>
             <div id="mapDiv">
-                <img id="mapImg" alt="not found" width="500px"
-                    src={mapImgLink} style={{maxHeight:"520px"}}
+                <img id="mapImg" alt="not found" width="360px"
+                    src={mapImgLink} style={{maxHeight:"360px"}}
                     onLoad={() => { setMapIsLoad(true); }} ref={myImgRef} />
             </div>
         </>
