@@ -27,9 +27,9 @@ function Live2DModel() {
             <ReactLive2d
                 width={300}
                 height={500}
-                ModelList={['Hiyori', 'Haru']}
+                ModelList={['Hiyori', 'Haru', 'Natori']}
                 color={"#ffefd5"}
-                TouchDefault={['360°虛擬策展平台超棒(❁´◡`❁)~', 'Hello! 我們是專題第六組','滑鼠右鍵看看有甚麼神奇的事情發生^_^']}
+                TouchDefault={['360°虛擬策展平台超棒(❁´◡`❁)~', 'Hello! 我們是專題第六組','滑鼠右鍵看看有什麼神奇的事情發生']}
                 TouchBody={['歡迎參觀~', '想要知道更多優秀的策展人嗎?']}
                 TouchHead={['好想拿最佳影片獎，可以投票給專題第六組嗎', '好想拿最佳海報獎，可以投票給專題第六組嗎']}
                 menuList={["Mtab"]}

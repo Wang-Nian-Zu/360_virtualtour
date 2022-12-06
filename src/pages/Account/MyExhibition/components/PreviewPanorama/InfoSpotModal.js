@@ -23,9 +23,9 @@ const InfoSpotModal = (props) => {
                     <p>{intro}</p>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="info" onClick={() => {
+                    <Button className="cancel_btn" onClick={() => {
                         setInfoModalShow(false);
-                    }}>取消</Button>
+                    }}>關閉</Button>
                 </Modal.Footer>
             </Modal>
         </>
