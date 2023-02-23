@@ -1,0 +1,301 @@
+/*!
+	Copyright (c) 2018 Jed Watson.
+	Licensed under the MIT License (MIT), see
+	http://jedwatson.github.io/classnames
+*/
+
+/*!
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+
+/*! exports provided: Headers, Request, Response, DOMException, fetch */
+
+/*! exports provided: default */
+
+/*! no static exports found */
+
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
+
+/*!**********************!*\
+        !*** ./src/index.js ***!
+        \**********************/
+
+/*!************************!*\
+        !*** ./src/lapppal.ts ***!
+        \************************/
+
+/*!*************************!*\
+        !*** ./src/lappview.ts ***!
+        \*************************/
+
+/*!**************************!*\
+        !*** ./src/lappmodel.ts ***!
+        \**************************/
+
+/*!***************************!*\
+        !*** ./src/lappdefine.ts ***!
+        \***************************/
+
+/*!*****************************!*\
+        !*** ./src/asset/index.css ***!
+        \*****************************/
+
+/*!*****************************!*\
+        !*** ./src/lappdelegate.ts ***!
+        \*****************************/
+
+/*!*****************************!*\
+        !*** ./src/touchmanager.ts ***!
+        \*****************************/
+
+/*!**********************************!*\
+        !*** ./src/lapplive2dmanager.ts ***!
+        \**********************************/
+
+/*!***********************************!*\
+        !*** ./src/lapptexturemanager.ts ***!
+        \***********************************/
+
+/*!**************************************!*\
+        !*** ./Framework/src/id/cubismid.ts ***!
+        \**************************************/
+
+/*!**************************************!*\
+        !*** ./Framework/src/type/csmmap.ts ***!
+        \**************************************/
+
+/*!****************************************!*\
+        !*** ./Framework/src/type/csmrectf.ts ***!
+        \****************************************/
+
+/*!*****************************************!*\
+        !*** ./Framework/src/type/csmstring.ts ***!
+        \*****************************************/
+
+/*!*****************************************!*\
+        !*** ./Framework/src/type/csmvector.ts ***!
+        \*****************************************/
+
+/*!******************************************!*\
+        !*** ./Framework/src/math/cubismmath.ts ***!
+        \******************************************/
+
+/*!******************************************!*\
+        !*** ./Framework/src/model/cubismmoc.ts ***!
+        \******************************************/
+
+/*!*******************************************!*\
+        !*** ./Framework/src/utils/cubismjson.ts ***!
+        \*******************************************/
+
+/*!********************************************!*\
+        !*** ./Framework/src/effect/cubismpose.ts ***!
+        \********************************************/
+
+/*!********************************************!*\
+        !*** ./Framework/src/model/cubismmodel.ts ***!
+        \********************************************/
+
+/*!********************************************!*\
+        !*** ./Framework/src/utils/cubismdebug.ts ***!
+        \********************************************/
+
+/*!********************************************!*\
+        !*** ./node_modules/whatwg-fetch/fetch.js ***!
+        \********************************************/
+
+/*!*********************************************!*\
+        !*** ./Framework/src/id/cubismidmanager.ts ***!
+        \*********************************************/
+
+/*!*********************************************!*\
+        !*** ./Framework/src/math/cubismvector2.ts ***!
+        \*********************************************/
+
+/*!**********************************************!*\
+        !*** ./Framework/src/effect/cubismbreath.ts ***!
+        \**********************************************/
+
+/*!**********************************************!*\
+        !*** ./Framework/src/icubismmodelsetting.ts ***!
+        \**********************************************/
+
+/*!**********************************************!*\
+        !*** ./Framework/src/math/cubismmatrix44.ts ***!
+        \**********************************************/
+
+/*!**********************************************!*\
+        !*** ./Framework/src/motion/cubismmotion.ts ***!
+        \**********************************************/
+
+/*!***********************************************!*\
+        !*** ./Framework/src/motion/acubismmotion.ts ***!
+        \***********************************************/
+
+/*!************************************************!*\
+        !*** ./Framework/src/cubismframeworkconfig.ts ***!
+        \************************************************/
+
+/*!************************************************!*\
+        !*** ./Framework/src/effect/cubismeyeblink.ts ***!
+        \************************************************/
+
+/*!************************************************!*\
+        !*** ./Framework/src/live2dcubismframework.ts ***!
+        \************************************************/
+
+/*!************************************************!*\
+        !*** ./Framework/src/math/cubismviewmatrix.ts ***!
+        \************************************************/
+
+/*!************************************************!*\
+        !*** ./Framework/src/model/cubismusermodel.ts ***!
+        \************************************************/
+
+/*!************************************************!*\
+        !*** ./Framework/src/physics/cubismphysics.ts ***!
+        \************************************************/
+
+/*!*************************************************!*\
+        !*** ./Framework/src/cubismmodelsettingjson.ts ***!
+        \*************************************************/
+
+/*!*************************************************!*\
+        !*** ./Framework/src/math/cubismmodelmatrix.ts ***!
+        \*************************************************/
+
+/*!*************************************************!*\
+        !*** ./Framework/src/math/cubismtargetpoint.ts ***!
+        \*************************************************/
+
+/*!**************************************************!*\
+        !*** ./Framework/src/motion/cubismmotionjson.ts ***!
+        \**************************************************/
+
+/*!***************************************************!*\
+        !*** ./Framework/src/cubismdefaultparameterid.ts ***!
+        \***************************************************/
+
+/*!***************************************************!*\
+        !*** ./Framework/src/rendering/cubismrenderer.ts ***!
+        \***************************************************/
+
+/*!****************************************************!*\
+        !*** ./Framework/src/model/cubismmodeluserdata.ts ***!
+        \****************************************************/
+
+/*!****************************************************!*\
+        !*** ./Framework/src/physics/cubismphysicsjson.ts ***!
+        \****************************************************/
+
+/*!*****************************************************!*\
+        !*** ./Framework/src/motion/cubismmotionmanager.ts ***!
+        \*****************************************************/
+
+/*!*****************************************************!*\
+        !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+        \*****************************************************/
+
+/*!******************************************************!*\
+        !*** ./Framework/src/motion/cubismmotioninternal.ts ***!
+        \******************************************************/
+
+/*!********************************************************!*\
+        !*** ./Framework/src/model/cubismmodeluserdatajson.ts ***!
+        \********************************************************/
+
+/*!********************************************************!*\
+        !*** ./Framework/src/motion/cubismexpressionmotion.ts ***!
+        \********************************************************/
+
+/*!********************************************************!*\
+        !*** ./Framework/src/motion/cubismmotionqueueentry.ts ***!
+        \********************************************************/
+
+/*!********************************************************!*\
+        !*** ./Framework/src/physics/cubismphysicsinternal.ts ***!
+        \********************************************************/
+
+/*!*********************************************************!*\
+        !*** ./Framework/src/rendering/cubismrenderer_webgl.ts ***!
+        \*********************************************************/
+
+/*!**********************************************************!*\
+        !*** ./Framework/src/motion/cubismmotionqueuemanager.ts ***!
+        \**********************************************************/
+
+/*!*******************************************************************!*\
+        !*** ./node_modules/css-loader/dist/cjs.js!./src/asset/index.css ***!
+        \*******************************************************************/
+
+/*!****************************************************************************!*\
+        !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+        \****************************************************************************/
+
+/*!**************************************************************************************!*\
+        !*** external {"root":"React","commonjs2":"react","commonjs":"react","amd":"react"} ***!
+        \**************************************************************************************/
+
+/**
+ * @license React
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @license React
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * React Router DOM v6.3.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * React Router v6.3.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
