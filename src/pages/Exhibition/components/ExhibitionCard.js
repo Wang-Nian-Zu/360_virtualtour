@@ -17,7 +17,11 @@ const ExhibitionCard = (props) => {
           <Card.Text className='ellipsis'> {eIntro} </Card.Text>
         </Card.Body>
         <Card.Footer className='d-flex justify-content-center'>
-          <Link to={"/DetailExhibition?eID=" + exhibition.eID} className="btn moreInfo">了解更多 ▶</Link>
+          {
+              (exhibition.canView === true) 
+              ?(<Link to={"/DetailExhibition?eID=" + exhibition.eID} className="btn moreInfo">了解更多 ▶</Link>)
+              :(<Card.Text className="btn notOpen">尚未開放</Card.Text>)
+          }         
         </Card.Footer>
       </Card>
     </CardGroup>

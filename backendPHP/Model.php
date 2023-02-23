@@ -67,6 +67,14 @@ function getExhibitionList(){
         $tArr['frontPicture']=$rs['frontPicture'];
         $tArr['first_name']=$rs['first_name'];
         $tArr['last_name']=$rs['last_name'];
+        date_default_timezone_set('Asia/taipei');
+        $now = new DateTime();
+        $start = new DateTime($rs["startTime"]);
+        if($start <= $now){
+            $tArr["canView"] = true;
+        }else{
+            $tArr["canView"] = false;
+        }
         $retArr[] = $tArr;
     }
     return $retArr;//最後是回傳一個二維陣列
@@ -118,6 +126,14 @@ function LoginExhibitionList($usr){//登入後顯示展覽
         $tArr['frontPicture']=$rs['frontPicture'];
         $tArr['first_name']=$rs['first_name'];
         $tArr['last_name']=$rs['last_name'];
+        date_default_timezone_set('Asia/taipei');
+        $now   = new DateTime();
+        $start   = new DateTime($rs["startTime"]);
+        if($start <= $now){
+            $tArr["canView"] = true;
+        }else{
+            $tArr["canView"] = false;
+        }
         $retArr[] = $tArr;
     }
     return $retArr;//最後是回傳一個二維陣列

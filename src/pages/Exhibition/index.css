@@ -77,6 +77,21 @@ a:hover {
     color: #f2eee1;
 }
 
+.notOpen {
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    /* border: solid 1pt #424242; */
+    border-radius: 60pt;
+    /* background-color: #677889; */
+    color: #d9534f;
+}
+
+.notOpen:hover {
+    background-color: #d9534f;
+    color: #f2eee1;
+}
+
 .btn.btn-danger {
     border: solid 1px #e38970;
     border-radius: 4px;
